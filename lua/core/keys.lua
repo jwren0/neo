@@ -20,3 +20,9 @@ utils.nmap("<A-Down>", ":m .+1<CR>==")
 
 utils.vmap("<A-Up>", ":m '<-2<CR>gv=gv")
 utils.vmap("<A-Down>", ":m '>+1<CR>gv=gv")
+
+-- Switching buffers
+utils.nmap("<C-h>", "<C-w>h")
+utils.nmap("<C-j>", "<C-w>j")
+utils.nmap("<C-k>", "<C-w>k")
+utils.nmap("<C-l>", "<C-w>l")
