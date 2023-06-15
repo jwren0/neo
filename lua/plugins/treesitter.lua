@@ -3,10 +3,10 @@ if not present then
     return
 end
 
-local function disable_large(lang, buf)
+local function disable_large(_, buf)
     -- 100 KiB
     local max_filesize = 100 * 1024
-    local ok, tats = pcall(
+    local ok, stats = pcall(
         vim.loop.fs_stat,
         vim.api.nvim_buf_get_name(buf)
     )
