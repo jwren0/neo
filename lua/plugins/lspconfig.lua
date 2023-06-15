@@ -51,14 +51,158 @@ local function on_attach(_, bufnr)
     nmap("<Space>q",  vim.diagnostic.setloclist)
 end
 
+--[[
+lspconfig["clangd"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+})
+]]
+
+--[[
+lspconfig["gopls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+})
+]]
+
+--[[
+lspconfig["hls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "cabal", "haskell", "lhaskell" },
+})
+]]
+
+--[[
+lspconfig["jdtls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "java" },
+})
+]]
+
+--[[
+lspconfig["kotlin_language_server"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "kotlin" },
+})
+]]
+
 lspconfig["lua_ls"].setup({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "lua" },
 })
 
+--[[
+lspconfig["nim_langserver"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "nim" },
+})
+]]
+
+--[[
+lspconfig["ocamllsp"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {
+        "ocaml", "ocaml.menhir", "ocaml.interface",
+        "ocaml.ocamllex", "reason", "dune",
+    },
+})
+]]
+
+--[[
+lspconfig["ols"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "odin" },
+})
+]]
+
+--[[
+lspconfig["phpactor"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "php" },
+})
+]]
+
+--[[
+lspconfig["pylsp"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "python" },
+})
+]]
+
+--[[
+lspconfig["r_language_server"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "r", "rmd" },
+})
+]]
+
+--[[
+lspconfig["rome"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {
+        "javascript", "javascriptreact", "json",
+        "typescript", "typescript.tsx", "typescriptreact",
+    },
+})
+]]
+
+--[[
 lspconfig["rust_analyzer"].setup({
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "rust" },
 })
+]]
+
+--[[
+lspconfig["sorbet"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "ruby" },
+})
+]]
+
+--[[
+lspconfig["sqlls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "sql", "mysql" },
+})
+]]
+
+--[[
+lspconfig["vls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "v", "vlang" },
+})
+]]
+
+--[[
+lspconfig["yamlls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "yaml", "yaml.docker-compose" },
+})
+]]
+
+--[[
+lspconfig["zls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "zig", "zir" },
+})
+]]
