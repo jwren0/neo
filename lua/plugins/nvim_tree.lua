@@ -12,4 +12,8 @@ end
 
 utils.nmap("<leader>f", ":NvimTreeToggle<CR>")
 
-nvim_tree.setup()
+nvim_tree.setup({
+    renderer = {
+        root_folder_label = ":t"
+    }
+})
