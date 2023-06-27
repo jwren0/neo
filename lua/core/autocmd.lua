@@ -1,22 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- Trim trailing whitespace on write
-autocmd("BufWritePre", {
-    pattern = "*",
-    command = ":s/\\s\\+$//e",
-})
-
--- Custom indentation
-autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = { "css", "html", "rb", "txt" },
-    command = "setlocal expandtab shiftwidth=2 tabstop=2",
-})
-
-autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = "Makefile",
-    command = "setlocal noexpandtab shiftwidth=8 tabstop=8",
-})
-
 -- Cleaner terminal
 autocmd("WinEnter", {
     pattern = "*",
@@ -34,7 +17,6 @@ autocmd("TermOpen", {
     pattern = "*",
     command = [[
     match none
-    2match none
     setlocal nonumber norelativenumber nospell statusline=Terminal
     startinsert
     ]],
@@ -43,8 +25,7 @@ autocmd("TermOpen", {
 autocmd("TermClose", {
    pattern = "*",
    command = [[
-   match LongLines /\%>72v.\+/
-   2match ExtraWhitespace /\s\+$/
+   match ExtraWhitespace /\s\+$/
 
    if !v:event.status
        exe 'bdelete! ' .. expand('<abuf>')
@@ -56,11 +37,8 @@ autocmd("TermClose", {
 autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*",
     command = [[
-    highlight LongLines ctermbg=red ctermfg=black guibg=red guifg=black
-    match LongLines /\%>72v.\+/
-
     highlight ExtraWhitespace ctermbg=red ctermfg=black
     highlight ExtraWhitespace guibg=red guifg=black
-    2match ExtraWhitespace /\s\+$/
+    match ExtraWhitespace /\s\+$/
     ]],
 })

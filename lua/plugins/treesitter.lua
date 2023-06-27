@@ -20,7 +20,7 @@ end
 
 treesitter.setup({
     ensure_installed = {
-        "c", "lua", "vim", "vimdoc",
+        "lua", "vim", "vimdoc",
     },
 
     sync_install = false,
