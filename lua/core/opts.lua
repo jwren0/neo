@@ -1,6 +1,7 @@
 local v = vim.opt
 
 v.relativenumber = true
+v.number = true
 v.guicursor = ""
 v.mouse = "a"
 v.splitbelow = true
